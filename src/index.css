@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+.hero-thumbs-swiper .swiper-slide-thumb-active > div {
+  border-color: red;
+  translate: scale(1.9);
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-thumbs-swiper .swiper-slide-thumb-active img {
+  opacity: 1;
+}
