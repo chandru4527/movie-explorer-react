@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdFavorite, MdMenu, MdClose, MdPublic, MdSearch } from "react-icons/md";
 import Image from "../components/media/Image";
@@ -34,6 +34,14 @@ const Header = () => {
   const closeMenu = () => {
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
     <header className="sticky top-0 w-full z-50  bg-black/80">
